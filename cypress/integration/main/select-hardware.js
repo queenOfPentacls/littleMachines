@@ -14,6 +14,7 @@ const MODAL_CLOSE = '.eaYebE:first'
 describe('HOMEPASS SHOP', () => {
   it('TEST ELEMENTS ON PAGE', () => {
     cy.visit(SHOP_LINK)
+    cy.wait(1000)
     cy.contains('Select your Hardware')
     //NAV BAR 
     //verify homepass logo
