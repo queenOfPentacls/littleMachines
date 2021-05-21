@@ -1,10 +1,10 @@
 
 const LOCAL_HOST_3 = 'http://localhost:3000/homepass/customize-membership'
 const HEADER = '.Header__HeaderWrapper-q8vck-1'
-const CART_BTN = '.ProductSelectorFooter__NextButton-saqfh4-4'
+const CART_BTN = '.ProductSelectorFooter__ProceedToCart-saqfh4-9'
 const BACK_BTN = '.ProductSelectorFooter__BackButton-saqfh4-5'
 const MEMBERSHIP = '.MembershipComponent__MembershipButton-a1q3q4-2'
-const PRICE = '.MembershipComponent__PriceLine-a1q3q4-11'
+const PRICE_MEM = '.MembershipComponent__PriceLine-a1q3q4-11'
 const MODAL_CLOSE_LOCAL = '.Modal__ModalToggleButton-sc-1ywrvd4-3'
 
 
@@ -24,17 +24,17 @@ describe('HOMEPASS SELECT MEMBERSHIP', () => {
   })
 })
 
-describe('CART DEACTIVATED', () => {
-  it('DEAVTIVATED', () => {
-    cy.get(CART_BTN).should('be.disabled')
-  })
-})
+// describe('CART DEACTIVATED', () => {
+//   it('DEAVTIVATED', () => {
+//     cy.get(CART_BTN).should('be.disabled')
+//   })
+// })
 
 describe('1 YEAR', () => {
   it('TEST MEMBERSHIP', () => {
     cy.get(MEMBERSHIP).contains('1 year').click()
-    cy.get(PRICE).eq(0).contains('$99')
-    cy.get(CART_BTN).should('not.be.disabled').click()
+    cy.get(PRICE_MEM).eq(0).contains('$99')
+    cy.get(CART_BTN).should('not.be.disabled')
   })
 })
 
@@ -42,7 +42,7 @@ describe('2 YEAR', () => {
   it('TEST MEMBERSHIP', () => {
     cy.get(MEMBERSHIP).contains('2 year').click()
     cy.get(PRICE).eq(1).contains('$198')
-    cy.get(CART_BTN).should('not.be.disabled').click()
+    cy.get(CART_BTN).should('not.be.disabled')
   })
 })
 
@@ -50,6 +50,6 @@ describe('3 YEAR', () => {
   it('TEST MEMBERSHIP', () => {
     cy.get(MEMBERSHIP).contains('3 year').click()
     cy.get(PRICE).eq(2).contains('$297')
-    cy.get(CART_BTN).should('not.be.disabled').click()
+    cy.get(CART_BTN).should('not.be.disabled')
   })
 })
