@@ -22,7 +22,7 @@ describe('HOMEPASS SHOP', () => {
     cy.get(HEADER).contains("What's Included")
     cy.get(HEADER).contains('Smart Home Experience')
     cy.contains("Compare Products")
-    // cy.get(MODAL_CLOSE_LOCAL).click()
+    // cy.get(MODAL_CLOSE_LOCAL).eq(1).click()
   })
 })
 
