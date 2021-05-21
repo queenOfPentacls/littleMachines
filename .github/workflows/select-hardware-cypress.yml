@@ -2,32 +2,32 @@ name: Cypress Test for CasePacer Web App
 on: [push]
 
 jobs:
-  # _Chrome:
-  #   runs-on: ubuntu-20.04
-  #   steps: 
-  #     - name: Checkout
-  #       uses: actions/checkout@v2
-  #     - name: Run integration tests with cypress X Chrome
-  #       uses: cypress-io/github-action@v2
-  #       with: 
-  #         build: npx cypress info
-  #         start: cypress open
-  #         browser: chrome
-
-  _Firefox: 
-    runs-on: ubuntu-18.04
+  _Chrome:
+    runs-on: ubuntu-20.04
     steps: 
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Run itegration tests with cypress X firefox
+      - name: Run integration tests with cypress X Chrome
         uses: cypress-io/github-action@v2
-        with:
+        with: 
           build: npx cypress info
           start: cypress open
-          wait-on: 'http://localhost:3000'
-          browser: firefox
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          browser: chrome
+
+  # _Firefox: 
+  #   runs-on: ubuntu-18.04
+  #   steps: 
+  #     - name: Checkout
+  #       uses: actions/checkout@v2
+  #     - name: Run itegration tests with cypress X firefox
+  #       uses: cypress-io/github-action@v2
+  #       with:
+  #         build: npx cypress info
+  #         start: cypress open
+  #         wait-on: 'http://localhost:3000'
+  #         browser: firefox
+  #       env:
+  #         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   
 
   
