@@ -12,22 +12,23 @@ jobs:
         with: 
           build: npx cypress info
           start: cypress open
+          wait-on: 'http://localhost:3000'
           browser: chrome
 
-  # _Firefox: 
-  #   runs-on: ubuntu-18.04
-  #   steps: 
-  #     - name: Checkout
-  #       uses: actions/checkout@v2
-  #     - name: Run itegration tests with cypress X firefox
-  #       uses: cypress-io/github-action@v2
-  #       with:
-  #         build: npx cypress info
-  #         start: cypress open
-  #         wait-on: 'http://localhost:3000'
-  #         browser: firefox
-  #       env:
-  #         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  _Firefox: 
+    runs-on: ubuntu-18.04
+    steps: 
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Run itegration tests with cypress X firefox
+        uses: cypress-io/github-action@v2
+        with:
+          build: npx cypress info
+          start: cypress open
+          wait-on: 'http://localhost:3000'
+          browser: firefox
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   
 
   
