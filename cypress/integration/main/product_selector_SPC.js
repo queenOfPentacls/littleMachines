@@ -10,22 +10,6 @@ import {LOCAL_HOST,
   BACK_BTN,
   PLUS_BTN} from '../../globals'
 
-
-// // MAIN NAVIGATION 
-// describe('HOMEPASS SHOP', () => {
-// it('TEST ELEMENTS ON PAGE', () => {
-// cy.visit(LOCAL_HOST)
-// cy.contains('Select your Hardware')
-// //NAV BAR 
-// //verify homepass logo
-// cy.get('img[alt="HomePass"]')
-// cy.get(HEADER).contains("What's Included")
-// cy.get(HEADER).contains('Smart Home Experience')
-// cy.contains("Compare Products")
-// // cy.get(MODAL_CLOSE_LOCAL).eq(1).click()
-// })
-// })
-
 describe('SELECT YOUR HARDWARE - SUPERPOD CHAMPAGNE', () => {
   it('TEST SCENERIO 1.X', () => {
     cy.visit(LOCAL_HOST)

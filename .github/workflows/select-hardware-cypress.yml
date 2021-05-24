@@ -1,5 +1,5 @@
 name: Cypress Test for CasePacer Web App
-on: [push]
+on: [pull_request_target]
 
 jobs:
   _Chrome:
