@@ -1,5 +1,5 @@
-name: Cypress Test for CasePacer Web App
-on: [pull_request_target]
+name: Cypress Test for Plume Shop
+on: [push]
 
 jobs:
   _Chrome:
@@ -13,7 +13,7 @@ jobs:
           build: npx cypress info
           start: cypress open
           wait-on: 'http://localhost:3000'
-          token: ${{ secrets.GITHUB_TOKEN }}
+          # token: ${{ secrets.GITHUB_TOKEN }}
           browser: chrome
 
 
@@ -28,7 +28,7 @@ jobs:
           build: npx cypress info
           start: cypress open
           wait-on: 'http://localhost:3000'
-          token: ${{ secrets.GITHUB_TOKEN }}
+          # token: ${{ secrets.GITHUB_TOKEN }}
           browser: firefox
   
 
