@@ -1,7 +1,7 @@
 name: Cypress Test for Plume Shop
-on: 
-  push:
-    - main
+on:
+  repository_dispatch:
+    types: [opened]
 
 jobs:
   _Chrome:
