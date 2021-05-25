@@ -1,9 +1,11 @@
 name: Cypress Test for Plume Shop
-on: [push]
+on: 
+  push:
+    - main
 
 jobs:
   _Chrome:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps: 
       - name: Checkout
         uses: actions/checkout@v2
@@ -18,7 +20,7 @@ jobs:
 
 
   _Firefox: 
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     steps: 
       - name: Checkout
         uses: actions/checkout@v2
