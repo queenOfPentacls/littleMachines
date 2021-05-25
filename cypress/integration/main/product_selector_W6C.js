@@ -13,7 +13,6 @@ import {LOCAL_HOST,
 
 describe('SELECT YOUR HARDWARE - SUPERPOD WITH WIFI 6 CHAMPAGNE', () => {
   it('TEST SCENERIO 1.X', () => {
-    // cy.clearCookies()
     cy.visit(LOCAL_HOST)
     cy.get(PRICE).eq(1).contains('$159')
     cy.get(COLOR_LOCAL).eq(1).contains('Champagne').click()

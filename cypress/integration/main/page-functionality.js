@@ -2,7 +2,7 @@ import {HEADER, MODAL_CLOSE_LOCAL} from '../../globals'
 
 // VALIDATES THE STEP 1 PAGE + TESTS EDGE CASES & MODALS
 
-describe('HOMEPASS SHOP', () => {
+describe('HOMEPASS SELECT HARDWARE', () => {
   it('TEST ELEMENTS ON PAGE', () => {
     cy.visit('/homepass')
     cy.contains('Select your Hardware')
@@ -18,6 +18,9 @@ describe('HOMEPASS SHOP', () => {
     cy.get('.bZcYBD').click()
     cy.get('.lbFxBo').click()
     cy.wait(10)
+
+    //PRICE
+
   })
 })
 

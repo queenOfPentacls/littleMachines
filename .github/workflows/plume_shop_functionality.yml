@@ -14,8 +14,7 @@ jobs:
         with: 
           build: npx cypress info
           start: cypress open
-          wait-on: 'http://localhost:3000'
-          # token: ${{ secrets.GITHUB_TOKEN }}
+          # wait-on: 'http://localhost:3000'
           browser: chrome
 
 
@@ -29,8 +28,7 @@ jobs:
         with:
           build: npx cypress info
           start: cypress open
-          wait-on: 'http://localhost:3000'
-          # token: ${{ secrets.GITHUB_TOKEN }}
+          # wait-on: 'http://localhost:3000'
           browser: firefox
   
 
