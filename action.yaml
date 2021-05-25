@@ -1,0 +1,5 @@
+name: 'Testing automation'
+description: 'Repo for test to run automatically on certain branches'
+runs:
+  using: 'node12'
+  main: 'index.js'
