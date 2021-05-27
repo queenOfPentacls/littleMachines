@@ -9,12 +9,18 @@ jobs:
         uses: actions/checkout@v2
       - name: Run integration tests with cypress X Chrome
         uses: cypress-io/github-action@v2
+        id: cypress
+
         with: 
           build: npx cypress info
           start: cypress open
           # wait-on: 'http://localhost:3000'
           browser: chrome
-
+      - name: Get-Results
+        uses: ./ # URL TO ACTION
+        with: 
+          cypress_chrome: ${{ steps.cypress.outcome }}
+  
 
   _Firefox: 
     runs-on: ubuntu-latest

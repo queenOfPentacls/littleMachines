@@ -1,6 +1,11 @@
 name: 'Testing automation'
 description: 'Repo for test to run automatically on certain branches'
 inputs:
+  cypress_chrome:
+    description: 'Run Cypress test with chrome'
+  # run:
+  #   description: 'Run the cypress test suites'
+  #   required: true
   record:
     description: 'Sends test results to Cypress Dashboard'
     required: false
@@ -23,9 +28,6 @@ inputs:
     required: false
   start:
     description: 'Command for starting local server in the background'
-    required: false
-  start-windows:
-    description: 'A different start command on Windows'
     required: false
   build:
     description: 'Command to run in build step before starting tests'
@@ -81,6 +83,8 @@ inputs:
 outputs:
   dashboardUrl:
     description: 'Cypress Dashboard URL if the run was recorded'
+  cypress-tests:
+    description: 'Access the cypress tests'
 runs:
   using: 'node12'
   main: 'dist/index.js'
