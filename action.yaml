@@ -2,10 +2,9 @@ name: 'Testing automation'
 description: 'Repo for test to run automatically on certain branches'
 inputs:
   cypress_chrome:
-    description: 'Run Cypress test with chrome'
-  # run:
-  #   description: 'Run the cypress test suites'
-  #   required: true
+    description: 'set run cmd for Cypress test with chrome'
+    required: true
+    default: npx cypress run
   record:
     description: 'Sends test results to Cypress Dashboard'
     required: false
