@@ -11,6 +11,10 @@ jobs:
         shell: bash
         run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
         id: extract_branch
+      - name: Get-Results
+        uses: ./ # URL TO ACTION
+        with: 
+          cypress_chrome: ${{ steps.cypress.outcome }}
       - name: Run integration tests with cypress X Chrome
         uses: cypress-io/github-action@v2.9.7
         id: cypress
@@ -19,10 +23,6 @@ jobs:
           start: cypress open
           wait-on: 'http://localhost:3000'
           browser: chrome
-      - name: Get-Results
-        uses: ./ # URL TO ACTION
-        with: 
-          cypress_chrome: ${{ steps.cypress.outcome }}
   
 
   _Firefox: 
