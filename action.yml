@@ -15,8 +15,9 @@ outputs:
   cypress-tests:
     description: 'Access the cypress tests'
 runs:
-  using: 'node12'
+  using: 'docker'
+  image: 'Dockerfile'
   main: 'dist/index.js'
-branding:
-  color: 'green'
-  icon: 'check-square'
+  args: 
+    - ${{ inputs.cypress_chrome}}
+    - ${{ inputs.firefox_chrome}}
