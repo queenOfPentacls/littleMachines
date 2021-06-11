@@ -1,4 +1,4 @@
-export const DEPLOYED_LINK = 'https://eloquent-lich-king.netlify.app/homepass/'
+export const DEPLOYED_LINK = 'https://plume-new-shop.netlify.app/homepass'
 export const LOCAL_HOST = 'http://localhost:3000/homepass'
 export const LOCAL_HOST_3 = 'http://localhost:3000/homepass/customize-membership'
 

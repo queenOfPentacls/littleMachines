@@ -15,9 +15,5 @@ outputs:
   cypress-tests:
     description: 'Access the cypress tests'
 runs:
-  using: 'docker'
-  image: 'Dockerfile'
+  using: 'node12'
   main: 'dist/index.js'
-  args: 
-    - ${{ inputs.cypress_chrome}}
-    - ${{ inputs.firefox_chrome}}
