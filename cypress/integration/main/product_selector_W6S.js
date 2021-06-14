@@ -1,20 +1,20 @@
 //GLOBAL VARIABLES 
-import {LOCAL_HOST, 
-  HEADER, 
+import {
   PRICE_MEM, 
-  PRICE, 
-  COLOR_LOCAL, 
   NEXT, 
   CART_BTN, 
   MEMBERSHIP,
   BACK_BTN,
-  PLUS_BTN} from '../../globals'
+  PLUS_BTN,
+  COLOR_CON,
+  QUANTITY,
+  PRICE_CON} from '../../globals'
 
 describe('SELECT YOUR HARDWARE - SUPERPOD WITH WIFI 6 SILVER', () => {
   it('TEST SCENERIO 1.X', () => {
-    cy.visit(LOCAL_HOST)
-    cy.get(PRICE).eq(1).contains('$159')
-    cy.get(COLOR_LOCAL).eq(1).contains('Silver').click()
+    cy.visit('/')
+    cy.get(PRICE_CON).eq(1).contains('$159')
+    cy.get(COLOR_CON).eq(1).contains('Silver').click()
     cy.get(NEXT).click()
     cy.url().should('include', '/customize-hardware')
     cy.contains('1 SuperPod').click()
@@ -35,7 +35,7 @@ describe('SELECT YOUR HARDWARE - SUPERPOD WITH WIFI 6 SILVER', () => {
     cy.get(BACK_BTN).click()
     cy.url().should('include', '/customize-hardware')
     cy.get(PLUS_BTN).eq(1).click()
-    cy.get('.ganQgv').contains('3')
+    cy.get(QUANTITY).contains('3')
     cy.get(NEXT).click()
     cy.url().should('include', '/customize-membership')
     cy.get(MEMBERSHIP).contains('3 year').click()
@@ -44,7 +44,7 @@ describe('SELECT YOUR HARDWARE - SUPERPOD WITH WIFI 6 SILVER', () => {
     cy.get(BACK_BTN).click()
     cy.url().should('include', '/customize-hardware')
     cy.get(PLUS_BTN).eq(1).dblclick()
-    cy.get('.ganQgv').contains('5')
+    cy.get(QUANTITY).contains('5')
     cy.get(NEXT).click()
     cy.url().should('include', '/customize-membership')
   })
