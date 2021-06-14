@@ -14,11 +14,6 @@ jobs:
           build: npx cypress info
           start: cypress open
           browser: chrome
-      - name: Get-Results
-        uses: ./ # URL TO ACTION
-        with: 
-          cypress_chrome: ${{ steps.cypress-tests.outcome }}
-  
 
   _Firefox: 
     runs-on: ubuntu-latest
@@ -26,7 +21,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Run itegration tests with cypress X firefox
-        uses: cypress-io/github-action@v2
+        uses: cypress-io/github-action@v2.9.7
         with:
           start: cypress open
           browser: firefox
