@@ -1,0 +1,98 @@
+//POD MODEL (SP, WIFI6)
+var MODEL = 'SP';
+//POD COLOR (S, C)
+var COLOR = "S";
+
+//# OF PODS 1-15
+export const QUANTITY = '15';
+
+//MEMBERSHIP (1, 2, 3) (NO QUOTES)
+export const MEMBERSHIP = '3';
+
+//PROMO CODE (IF NO CODE, LEAVE BLANK)
+export const PROMO = 'FRIENDOFPLUME';
+
+//PERCENTAGE PROMO SAVES (IF NO CODE ENTER 0%, FRIENDOFPLUME IS ALWAYS 50%)
+var PROMO_PERCENT = '50%';
+
+//TAX (Y/N)		
+export const TAX = 'Y';
+
+
+
+
+//!!!IGNORE BELOW THIS LINE!!!// //!!!IGNORE BELOW THIS LINE!!!// //!!!IGNORE BELOW THIS LINE!!!// //!!!IGNORE BELOW THIS LINE!!!// //!!!IGNORE BELOW THIS LINE!!!//
+var HARDWARE_SAVINGS = 99;
+export const MODEL_TYPE = MODEL + COLOR;
+const QUANTITY_INT = parseInt(QUANTITY);
+const MEMBERSHIP_INT = parseInt(MEMBERSHIP);
+let MEMBERSHIP_TYPES = [99, 179, 249];
+var MEMBERSHIP_PRICE = MEMBERSHIP_TYPES[MEMBERSHIP_INT - 1];
+console.log('MEMBERSHIP_PRICE: ' + MEMBERSHIP_PRICE)
+
+if (MODEL == 'SP') {
+    let MODEL_PRICE = 99;
+    var POD_PRICE = MODEL_PRICE * QUANTITY_INT;
+}
+if (MODEL == 'WIFI6') {
+    let MODEL_PRICE = 159;
+    var POD_PRICE = MODEL_PRICE * QUANTITY_INT
+}
+console.log('pod price:' + POD_PRICE);
+
+var PROMO_FLOAT = parseFloat(PROMO_PERCENT) / 100.0;
+console.log('promo multiplier: ' + PROMO_FLOAT)
+
+if (MODEL == 'SP') {
+    var POD_PROMO = POD_PRICE - (POD_PRICE * PROMO_FLOAT);
+    var MEMBER_PROMO = MEMBERSHIP_PRICE - (MEMBERSHIP_PRICE * PROMO_FLOAT);
+    console.log('POD_PROMO: ' + POD_PROMO);
+    console.log('MEMBER_PROMO: ' + MEMBER_PROMO);
+}
+if (MODEL == 'WIFI6' && QUANTITY_INT <= 1 && PROMO == 'FRIENDOFPLUME') {
+    var POD_PROMO = 0;
+    var MEMBER_PROMO = MEMBERSHIP_PRICE - (MEMBERSHIP_PRICE * PROMO_FLOAT);
+    console.log('POD_PROMO: ' + POD_PROMO);
+    console.log('MEMBER_PROMO: ' + MEMBER_PROMO);
+} else if (MODEL == 'WIFI6') {
+    var POD_PROMO = POD_PRICE - (POD_PRICE * PROMO_FLOAT);
+    var MEMBER_PROMO = MEMBERSHIP_PRICE - (MEMBERSHIP_PRICE * PROMO_FLOAT);
+    console.log('POD_PROMO: ' + POD_PROMO);
+    console.log('MEMBER_PROMO: ' + MEMBER_PROMO);
+}
+
+if (TAX == 'Y') {
+    let MODEL_TAX = (((POD_PRICE - (POD_PRICE * PROMO_FLOAT)) - HARDWARE_SAVINGS) * 0.095);
+    console.log('MODEL_TAX: ' + MODEL_TAX);
+    let MEMBERSHIP_TAX = (MEMBER_PROMO) * 0.095;
+    var TOTAL_TAX = MEMBERSHIP_TAX + MODEL_TAX;
+    console.log('TOTAL_TAX: ' + TOTAL_TAX);
+}
+if (TAX == 'N') {
+    var TOTAL_TAX = 0;
+    console.log('TOTAL_TAX: ' + TOTAL_TAX);
+}
+if (PROMO == 'FRIENDOFPLUME' && QUANTITY_INT <= 1 && TAX == 'Y') {
+    var TOTAL_TAX = MEMBER_PROMO * 0.095;
+    var POD_PROMO = 0;
+    var MEMBER_PROMO = MEMBER_PROMO + 99;
+    console.log('TOTAL_TAX: ' + TOTAL_TAX);
+}
+if (PROMO == 'FRIENDOFPLUME' && QUANTITY_INT <= 1 && TAX == 'N') {
+    var POD_PROMO = 0;
+    var MEMBER_PROMO = MEMBER_PROMO + 99;
+    console.log('TOTAL_TAX: ' + TOTAL_TAX);
+}
+
+export const PRICE_BEFORE_PROMO = (POD_PRICE + MEMBERSHIP_PRICE) - HARDWARE_SAVINGS;
+console.log('PRICE BEFORE PROMO: ' + PRICE_BEFORE_PROMO);
+export const PRICE_AFTER_PROMO = (POD_PROMO + MEMBER_PROMO) - HARDWARE_SAVINGS;
+console.log('PRICE AFTER PROMO: ' + PRICE_AFTER_PROMO)
+if (TAX == 'Y') {
+    var FINAL_PRICE = PRICE_AFTER_PROMO + TOTAL_TAX;
+
+} else {
+    var FINAL_PRICE = PRICE_AFTER_PROMO;
+}
+export const CALCULATED_PRICE = FINAL_PRICE;
+console.log('FINAL PRICE: ' + FINAL_PRICE);

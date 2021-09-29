@@ -27,8 +27,11 @@
   "dependencies": {
     "@actions/core": "^1.3.0",
     "@actions/github": "^5.0.0",
-    "cypress": "^7.3.0",
     "start-server-and-test": "^1.12.3",
     "xvfb": "^0.4.0"
+  },
+  "devDependencies": {
+    "cypress": "^7.3.0",
+    "cypress-plugin-stripe-elements": "^1.0.2"
   }
 }

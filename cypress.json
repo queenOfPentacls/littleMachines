@@ -1,7 +1,8 @@
 {
   "viewportHeight": 960,
   "viewportWidth": 1536,
-  "baseUrl": "https://plume-new-shop.netlify.app/homepass", 
-  "pageLoadTimeout": 6000,
-  "defaultCommandTimeout": 6000
+  "baseUrl": "https://www-plume-com-b2c-develop.go-vip.net/homepass", 
+  "pageLoadTimeout": 50000,
+  "defaultCommandTimeout": 50000,
+  "chromeWebSecurity": false
 }
