@@ -3,6 +3,7 @@
   "viewportWidth": 1536,
   "baseUrl": "https://www-plume-com-b2c-develop.go-vip.net/homepass", 
   "pageLoadTimeout": 50000,
-  "defaultCommandTimeout": 50000,
+  "defaultCommandTimeout": 10000,
   "chromeWebSecurity": false
 }
+

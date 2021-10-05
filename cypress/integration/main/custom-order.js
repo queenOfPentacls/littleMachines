@@ -76,7 +76,7 @@ describe('CUSTOM ORDER', () => {
 	cy.wait(500)
 
 	if (PROMO != ''){
-	cy.get('[name="coupon_code"]').click().type(PROMO);	
+	cy.get('[name="coupon_code"]').click({force: true}).type(PROMO);	
 	/*
 	cy.get('[name="apply_coupon"]').click().then(cy.wait(5000))
 	cy.wait(5000).then(cy.get('strong > .woocommerce-Price-amount > bdi')
